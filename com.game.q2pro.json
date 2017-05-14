@@ -1,0 +1,51 @@
+{
+    "app-id": "com.game.q2pro",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "1.6",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "q2pro",
+    "finish-args": [
+        "--device=dri",
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=pulseaudio",
+	"--filesystem=~/.q2pro"
+    ],
+    "modules": [
+        {
+            "name": "q2pro",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make q2pro"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/AndreyNazarov/q2pro.git"
+                },
+                {
+                    "type": "file",
+                    "path": "com.game.q2pro.appdata.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "com.game.q2pro.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": ".config"
+                }
+            ],
+            "post-install": [
+				"mkdir -p /app/bin",
+				"cp q2pro /app/bin",
+				"mkdir -p /app/share/appdata",
+				"cp com.game.q2pro.appdata.xml /app/share/appdata",
+				"mkdir -p /app/share/applications",
+				"cp com.game.q2pro.desktop /app/share/applications",
+				"mkdir -p /app/share/icons/hicolor/32x32/apps",
+				"cp src/unix/res/q2pro.xpm /app/share/icons/hicolor/32x32/apps/com.game.q2pro.xpm"
+            ]
+        }
+    ]
+}

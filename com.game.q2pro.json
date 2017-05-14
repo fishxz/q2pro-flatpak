@@ -12,7 +12,7 @@
         "--share=network",
         "--socket=x11",
         "--socket=pulseaudio",
-	    "--persist=.q2pro"
+	"--persist=.q2pro"
     ],
     "modules": [
         {

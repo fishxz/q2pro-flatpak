@@ -19,7 +19,7 @@
             "name": "q2pro",
             "buildsystem": "simple",
             "build-commands": [
-                "make q2pro"
+                "make"
             ],
             "sources": [
                 {

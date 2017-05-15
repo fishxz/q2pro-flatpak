@@ -10,6 +10,7 @@
         "--socket=x11",
         "--socket=pulseaudio",
         "--persist=.q2pro"
+    ],
     "command": "q2pro",
     "rename-icon": "q2pro",
     "rename-desktop-file": "q2pro.desktop",

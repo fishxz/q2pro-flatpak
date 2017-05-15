@@ -4,6 +4,6 @@
 
 `flatpak --user install q2pro.flatpak`
 
-`copy gamefiles to ~/.var/app/com.game.q2pro/.q2pro`
+copy gamefiles to: `~/.var/app/com.game.q2pro/.q2pro`
 
 `flatpak run com.game.q2pro`

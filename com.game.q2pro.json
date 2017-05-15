@@ -45,7 +45,7 @@
 				"mkdir -p /app/share/icons/hicolor/32x32/apps",
 				"cp src/unix/res/q2pro.xpm /app/share/icons/hicolor/32x32/apps",
 				"mkdir -p /app/share/q2pro/baseq2",
-				"cp gamex86_64.so /app/share/q2pro/baseq2",
+				"cp game*.so /app/share/q2pro/baseq2",
 				"cp src/client/ui/q2pro.menu /app/share/q2pro/baseq2"
             ]
         }

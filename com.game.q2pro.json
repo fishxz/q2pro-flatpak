@@ -13,7 +13,6 @@
     "command": "q2pro",
     "rename-icon": "q2pro",
     "rename-desktop-file": "q2pro.desktop",
-    ],
     "modules": [
         {
             "name": "q2pro",

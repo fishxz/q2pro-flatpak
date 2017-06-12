@@ -22,9 +22,9 @@
             "make-args": [
                 "CONFIG_SDL2=y",
                 "CONFIG_HTTP=y",
-                "CONFIG_PATH_DATA=/app/share/q2pro",
-                "CONFIG_PATH_LIB=/app/share/q2pro",
-                "CONFIG_PATH_HOME=.q2pro"
+                "CONFIG_PATH_DATA=/app/share/games/q2pro",
+                "CONFIG_PATH_LIB=/app/lib/games/q2pro",
+                "CONFIG_PATH_HOME=~/.q2pro"
             ],
             "sources": [
                 {
@@ -45,9 +45,10 @@
                 "cp src/unix/res/q2pro.desktop /app/share/applications",
                 "mkdir -p /app/share/icons/hicolor/32x32/apps",
                 "cp src/unix/res/q2pro.xpm /app/share/icons/hicolor/32x32/apps",
-                "mkdir -p /app/share/q2pro/baseq2",
-                "cp game*.so /app/share/q2pro/baseq2",
-                "cp src/client/ui/q2pro.menu /app/share/q2pro/baseq2"
+                "mkdir -p /app/lib/games/q2pro/baseq2",
+                "cp game*.so /app/lib/games/q2pro/baseq2",
+                "mkdir -p /app/share/games/q2pro/baseq2",
+                "cp src/client/ui/q2pro.menu /app/share/games/q2pro/baseq2"
             ]
         }
     ]

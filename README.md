@@ -1,6 +1,6 @@
 # q2pro-flatpak
 
-`wget https://github.com/fishxz/q2pro-flatpak/releases/download/v3.0/q2pro.flatpak`
+`wget https://github.com/fishxz/q2pro-flatpak/releases/download/v4.0/q2pro.flatpak`
 
 `flatpak --user install q2pro.flatpak`
 

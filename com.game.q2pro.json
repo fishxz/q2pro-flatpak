@@ -21,7 +21,11 @@
             "no-make-install": true,
             "make-args": [
                 "CONFIG_SDL2=y",
+                "CONFIG_PNG=y",
+                "CONFIG_JPEG=y",
                 "CONFIG_HTTP=y",
+                "CONFIG_OPENAL=y",
+                "CONFIG_DIRECT_SOUND=y",
                 "CONFIG_PATH_DATA=/app/share/games/q2pro",
                 "CONFIG_PATH_LIB=/app/lib/games/q2pro",
                 "CONFIG_PATH_HOME=~/.q2pro"

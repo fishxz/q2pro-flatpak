@@ -1,5 +1,5 @@
 {
-    "app-id": "com.game.q2pro",
+    "app-id": "com.github.skullernet.q2pro",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "1.6",
     "sdk": "org.freedesktop.Sdk",
@@ -33,14 +33,14 @@
                 },
                 {
                     "type": "file",
-                    "path": "com.game.q2pro.appdata.xml"
+                    "path": "com.github.skullernet.q2pro.appdata.xml"
                 }
             ],
             "post-install": [
                 "mkdir -p /app/bin",
                 "cp q2pro /app/bin",
                 "mkdir -p /app/share/appdata",
-                "cp com.game.q2pro.appdata.xml /app/share/appdata",
+                "cp com.github.skullernet.q2pro.appdata.xml /app/share/appdata",
                 "mkdir -p /app/share/applications",
                 "cp src/unix/res/q2pro.desktop /app/share/applications",
                 "mkdir -p /app/share/icons/hicolor/32x32/apps",

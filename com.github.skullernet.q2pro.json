@@ -16,23 +16,14 @@
     ],
     "modules": [
         {
-            "name": "libpng",
-            "cleanup": [ "/bin", "/share" ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://vorboss.dl.sourceforge.net/project/libpng/libpng16/1.6.34/libpng-1.6.34.tar.xz",
-                    "sha256": "2f1e960d92ce3b3abd03d06dfec9637dfbd22febf107a536b44f7a47c60659f6"
-                }
-            ]
-        },
-        {
             "name": "q2pro",
             "no-autogen": true,
             "no-make-install": true,
             "make-args": [
                 "CONFIG_SDL2=y",
                 "CONFIG_PNG=y",
+                "PNG_CFLAGS=",
+                "PNG_LIBS=-lpng16",
                 "CONFIG_JPEG=y",
                 "CONFIG_HTTP=y",
                 "CONFIG_OPENAL=y",

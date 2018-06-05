@@ -1,6 +1,6 @@
 # q2pro-flatpak
 
-`wget https://github.com/fishxz/q2pro-flatpak/releases/download/53d18b8/q2pro-client_linux64_x64.flatpak`
+`wget https://github.com/fishxz/q2pro-flatpak/releases/download/2af4584/q2pro-client_linux64_x64.flatpak`
 
 `flatpak install q2pro-client_linux64_x64.flatpak`
 

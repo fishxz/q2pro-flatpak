@@ -17,7 +17,6 @@ modules:
     no-autogen: true
     no-make-install: true
     make-args:
-      - CONFIG_SDL2=y
       - CONFIG_PNG=y
       - PNG_CFLAGS=
       - PNG_LIBS=-lpng16

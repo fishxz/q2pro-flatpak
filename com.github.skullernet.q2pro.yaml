@@ -2,7 +2,7 @@ app-id: com.github.skullernet.q2pro
 runtime: org.freedesktop.Platform
 runtime-version: '19.08'
 sdk: org.freedesktop.Sdk
-command: q2pro
+command: q2pro.sh
 rename-icon: q2pro
 rename-desktop-file: q2pro.desktop
 finish-args:
@@ -27,6 +27,8 @@ modules:
       - CONFIG_PATH_LIB=/app/bin
       - CONFIG_PATH_HOME=/var/data
     build-commands:
+      - install -D q2pro.sh -t /app/bin
+      - desktop-file-edit --set-key=Exec --set-value=q2pro.sh src/unix/res/q2pro.desktop
       - install -D q2pro -t /app/bin
       - install -D src/client/ui/q2pro.menu -t /app/bin/baseq2
       - install -D game$(uname -m).so -t /app/bin/baseq2
@@ -42,3 +44,8 @@ modules:
         path: com.github.skullernet.q2pro.appdata.xml
       - type: file
         path: q2pro.svg
+      - type: script
+        dest-filename: q2pro.sh
+        commands:
+          - ls ${XDG_DATA_HOME}/baseq2/pak0.pak || zenity --error --text "Game data (/baseq2/ etc.)  must be added to:\n${XDG_DATA_HOME}/baseq2/" --ok-label "Close" --width=400
+          - /app/bin/q2pro "$@"

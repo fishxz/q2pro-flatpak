@@ -1,17 +1,16 @@
 app-id: com.github.skullernet.q2pro
 runtime: org.freedesktop.Platform
-runtime-version: '18.08'
+runtime-version: '19.08'
 sdk: org.freedesktop.Sdk
 command: q2pro
 rename-icon: q2pro
 rename-desktop-file: q2pro.desktop
 finish-args:
-  - --device=dri
-  - --share=ipc
   - --share=network
+  - --share=ipc
   - --socket=x11
   - --socket=pulseaudio
-  - --persist=.q2pro
+  - --device=dri
 modules:
   - name: q2pro
     no-autogen: true
@@ -24,26 +23,22 @@ modules:
       - CONFIG_HTTP=y
       - CONFIG_OPENAL=y
       - CONFIG_DIRECT_SOUND=y
-      - CONFIG_PATH_DATA=/app/share/games/q2pro
-      - CONFIG_PATH_LIB=/app/lib/games/q2pro
-      - CONFIG_PATH_HOME=~/.q2pro
+      - CONFIG_PATH_DATA=/app/bin
+      - CONFIG_PATH_LIB=/app/bin
+      - CONFIG_PATH_HOME=/var/data
+    build-commands:
+      - install -D q2pro -t /app/bin
+      - install -D src/client/ui/q2pro.menu -t /app/bin/baseq2
+      - install -D game$(uname -m).so -t /app/bin/baseq2
+      - install -Dm644 com.github.skullernet.q2pro.appdata.xml -t /app/share/metainfo
+      - install -Dm644 src/unix/res/q2pro.desktop -t /app/share/applications
+      - install -Dm644 q2pro.svg -t /app/share/icons/hicolor/scalable/apps
     sources:
       - type: git
         url: https://github.com/skullernet/q2pro.git
+        tag: r1826
+        commit: 7ad132affeba68a91984852851630b2fe417c307
       - type: file
         path: com.github.skullernet.q2pro.appdata.xml
       - type: file
-        path: q2pro.png
-    post-install:
-      - mkdir -p /app/bin
-      - cp q2pro /app/bin
-      - mkdir -p /app/share/appdata
-      - cp com.github.skullernet.q2pro.appdata.xml /app/share/appdata
-      - mkdir -p /app/share/applications
-      - cp src/unix/res/q2pro.desktop /app/share/applications
-      - mkdir -p /app/share/icons/hicolor/32x32/apps
-      - cp q2pro.png /app/share/icons/hicolor/32x32/apps
-      - mkdir -p /app/lib/games/q2pro/baseq2
-      - cp game*.so /app/lib/games/q2pro/baseq2
-      - mkdir -p /app/share/games/q2pro/baseq2
-      - cp src/client/ui/q2pro.menu /app/share/games/q2pro/baseq2
+        path: q2pro.svg
